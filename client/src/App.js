@@ -6,13 +6,7 @@ import Loader from './Components/Loader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const Home = React.lazy(() => 
-new Promise(resolve => {
-  setTimeout(() => 
-    resolve(import('./Components/Home')
-  ), 1300);
-}));
-// import('./Components/Home'))
+const Home = React.lazy(() => import('./Components/Home'))
 
 class App extends React.Component {
   render() { 

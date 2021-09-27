@@ -29,42 +29,42 @@ const Header = () => {
 
     return ( 
         <nav>
-            <div class="logo">
+            <div className="logo">
                 <Logo />
             </div>
 
             <div className={mobileNavToogle ? "hamburger toggle" : "hamburger"} onClick={hamburgerClick}>
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+                <div className="line1"></div>
+                <div className="line2"></div>
+                <div className="line3"></div>
             </div>
 
             <ul className={mobileNavToogle ? "nav-links open" : "nav-links"}>
-                <li className={mobileNavToogle && 'fade show'}>
+                <li className={mobileNavToogle ? 'fade show': undefined}>
                     <NavLink exact to="/">
                         Home
                     </NavLink>
                 </li>
                 
-                <li className={mobileNavToogle && 'fade show'}>
+                <li className={mobileNavToogle ? 'fade show': undefined}>
                     <NavLink to="/features">
                         Features
                     </NavLink>
                 </li>
 
-                <li className={mobileNavToogle && 'fade show'}>
+                <li className={mobileNavToogle ? 'fade show': undefined}>
                     <NavLink to="/how">
                         How It Works
                     </NavLink>
                 </li>
     
-                <li className={mobileNavToogle && 'fade show'}>
+                <li className={mobileNavToogle ? 'fade show': undefined}>
                     <NavLink to="/try">
                         Try Out!
                     </NavLink>
                 </li>
     
-                <li className={mobileNavToogle && 'fade show'}>
+                <li className={mobileNavToogle ? 'fade show': undefined}>
                     <NavLink to="/login">
                         Login
                     </NavLink>    

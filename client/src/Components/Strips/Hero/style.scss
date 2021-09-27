@@ -1,20 +1,60 @@
-.hero {
-    background-color: #f7c851;
-    font-family: 'Barlow', sans-serif;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    h1 {
-        font-weight: 700;
-        font-size: 70px;
-        color: #413ada;
-        letter-spacing: 2px;
-    }
+header {
+    .hero {
+        background-color: #f7c851;
+        font-family: 'Barlow', sans-serif;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
 
-    h2 {
-        color: #f47a62;
+        @media screen and (max-width: 728px) {
+            flex-direction: column;
+        }
+
+        .hero-text {
+            width: 100%;
+
+            @media screen and (max-width: 728px){
+                margin-top: 10vh;
+            }
+
+            h1 {
+                font-weight: 700;
+                font-size: 70px;
+                color: #413ada;
+                letter-spacing: 2px;
+    
+                @media screen and (max-width: 1024px) {
+                    font-size: 54px;
+                }
+
+                @media screen and (max-width: 728px) {
+                    font-size: 46px;
+                }
+            }
+        
+            h2 {
+                color: #f47a62;
+                font-size: 32px;
+    
+                @media screen and (max-width: 1024px) {
+                    font-size: 24px;
+                }
+
+                @media screen and (max-width: 728px) {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        
+        .image {
+            @media screen and (max-width: 1024px) {
+                img {
+                    width: 90%;
+                }
+            }
+        }
     }
 }
