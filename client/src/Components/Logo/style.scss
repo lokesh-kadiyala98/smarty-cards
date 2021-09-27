@@ -1,0 +1,28 @@
+.logo {
+    display: flex;
+
+    div {
+        margin-right: .8em;
+    }
+
+    .triangle {
+        width: 0; 
+        height: 0; 
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 20px solid #f7c851;
+    }
+
+    .square {
+        height: 20px;
+        width: 20px;
+        background-color: #f47a62;
+    }
+
+    .circle {
+        height: 20px;
+        width: 20px;
+        background-color: #0ec167;
+        border-radius: 50%;
+    }
+}

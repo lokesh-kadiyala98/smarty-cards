@@ -1,0 +1,48 @@
+.loader {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #413ada;
+
+    .logo {
+
+        div {
+            margin-right: 2em;
+        }
+
+        .triangle {
+            border-left: 36px solid transparent;
+            border-right: 36px solid transparent;
+            border-bottom: 60px solid #f7c851;
+            
+            animation: jump .6s ease alternate infinite;
+        }
+
+        .square {
+            height: 60px;
+            width: 60px;
+
+            animation: jump .6s ease .2s alternate infinite;
+        }
+
+        .circle {
+            height: 60px;
+            width: 60px;
+
+            animation: jump .6s ease .4s alternate infinite;
+        }
+    }
+}
+
+@keyframes jump {
+    from {
+      transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+
+    to {
+      transform: translate3d(0, -1rem, 0);
+      opacity: .6;
+    }
+  }
