@@ -11,8 +11,8 @@ code {
 }
 
 ul {
-  list-style: none;
   margin-bottom: 0 !important;
+  padding: 0 !important;
 }
 
 a {
@@ -22,4 +22,8 @@ a {
 
 a:hover {
   color: inherit !important;
+}
+
+p {
+  margin-bottom: 0 !important;
 }

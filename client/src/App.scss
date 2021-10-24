@@ -1,0 +1,38 @@
+/* colors */
+$dark-blue: #413ada;
+$yellow: #f7c851;
+$orange: #f47a62;
+$green: #0ec167;
+
+/* scree sizes */
+$xs: 320px;
+$sm: 480px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1200px;
+
+.arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    
+    &.up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+    &.right {
+        margin-left: .4em;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+    &.left {
+        margin-right: .4em;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+    &.down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+}

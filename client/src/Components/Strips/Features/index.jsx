@@ -6,7 +6,7 @@ const Features = () => {
     return ( 
         <main className="features-section">
             <div className="features">
-                <div class="feature">
+                <div className="feature">
                     <img 
                         alt=""
                         className="center pt-4 pb-4 mt-5 mb-3"
@@ -19,7 +19,7 @@ const Features = () => {
                     </div>
                 </div>
 
-                <div class="feature">
+                <div className="feature">
                     <img 
                         alt=""
                         className="center pt-4 pb-4 mt-5 mb-3"
@@ -32,7 +32,7 @@ const Features = () => {
                     </div>
                 </div>
 
-                <div class="feature">
+                <div className="feature">
                     <img 
                         alt=""
                         className="center pt-4 pb-4 mt-5 mb-3"
