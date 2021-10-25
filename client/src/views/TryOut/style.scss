@@ -1,0 +1,255 @@
+@import "./../../App.scss";
+
+.template-theme-container {
+    position: relative;
+
+    .template-picker-view {
+        position: absolute;
+        min-height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        background-color: $dark-blue;
+        transition: all .3s ease-in-out;
+        z-index: 3;
+
+        &.slide-out {
+            transform: translate(-110%);
+        }
+        
+        .template {
+            cursor: pointer;
+            text-align: center;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            position: relative;
+            min-width: 200px;
+            min-height: 200px;
+            border-radius: 50px;
+            box-shadow: 20px 20px 60px #3731b9,
+                -20px -20px 60px #4b43fb;
+            transition: all 0.3s ease-in-out;
+            
+            &:hover {
+                box-shadow: inset 20px 20px 60px #3731b9,
+                    inset -20px -20px 60px #4b43fb;
+            }
+
+            &.selected {
+                background: linear-gradient(145deg, #463ee9, #3b34c4);
+                box-shadow: 20px 20px 60px #3731b9,
+                    -20px -20px 60px #4b43fb;
+            }
+
+            .fa-check-circle {
+                font-size: 32px;
+                color: #2a2599;
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        .flip-card {
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                margin: auto;
+                text-align: center;
+                transition: transform 0.8s;
+                transform-style: preserve-3d;
+            }
+            
+            &:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+            
+            .flip-card-front, .flip-card-back {
+                position: absolute;
+                top: -15px;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden; /* Safari */
+                backface-visibility: hidden;
+            }
+            
+            .flip-card-back {
+                transform: rotateY(180deg);
+            }
+
+            p {
+                font-size: 22px;
+            }
+        }
+
+        .options-card {
+            display: flex;
+            flex-direction: column;
+
+            &:hover li:last-child>.fa-check {
+                opacity: 1;
+            }   
+
+            .question {
+                margin: 40px 0 10px 0;
+                font-size: 22px;
+            }
+
+            .options {
+                position: relative;
+                ul {
+                    list-style: none;
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                    li {
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+
+        .btn {
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+            width: fit-content;
+            height: fit-content;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #ddd;
+            box-shadow: 20px 20px 60px #3731b9,
+                -20px -20px 60px #4b43fb;
+            opacity: 0;
+            transition: all .3s;
+
+            &.fade-in {
+                opacity: 1;
+            }
+
+            &:hover .arrow {
+                animation: bounce-right .6s ease .2s alternate infinite;
+            }
+
+            @media screen and (min-width: $sm) {
+                bottom: 50px;
+                right: 30px;
+                padding: 10px 30px;
+            }
+        }
+    }
+
+    .theme-picker-view {
+        position: absolute;
+        min-height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        background-color: $yellow;
+        transition: all .3s ease-in-out;
+        z-index: 2;
+
+        .theme {
+            cursor: pointer;
+            text-align: center;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            position: relative;
+            min-width: 200px;
+            min-height: 200px;
+            border-radius: 50px;
+            box-shadow: 20px 20px 60px #d2aa45,
+                -20px -20px 60px #ffe65d;
+            transition: all 0.3s ease-in-out;
+            
+            &:hover {
+                box-shadow: inset 20px 20px 60px #d2aa45,
+                    inset -20px -20px 60px #ffe65d;
+            }
+
+            &.selected {
+                background: linear-gradient(145deg, #ffd657, #deb449);
+                box-shadow: 20px 20px 60px #d2aa45,
+                    -20px -20px 60px #ffe65d;
+            }
+
+            p {
+                font-size: 22px;
+            }
+
+            .fa-check-circle {
+                font-size: 32px;
+                color: #a58635;
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        .btn {
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+            width: fit-content;
+            height: fit-content;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #ddd;
+            box-shadow: 20px 20px 60px #d2aa45,
+                -20px -20px 60px #ffe65d;
+            opacity: 0;
+            transition: all .3s;
+
+            &.fade-in {
+                opacity: 1;
+            }
+
+            &:hover .arrow {
+                animation: bounce-right .6s ease .2s alternate infinite;
+            }
+
+            @media screen and (min-width: $sm) {
+                bottom: 50px;
+                right: 30px;
+                padding: 10px 30px;
+            }
+
+            
+            &.back {
+                left: 20px;
+                opacity: 1;
+
+                &:hover .arrow {
+                    animation: bounce-left .6s ease .2s alternate infinite;
+                }
+
+                @media screen and (min-width: $sm) {
+                    left: 30px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes bounce-left {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: .2em;
+    }
+}
+
+@keyframes bounce-right {
+    from {
+        margin-right: 0;
+    }
+
+    to {
+        margin-right: .2em;
+    }
+}
