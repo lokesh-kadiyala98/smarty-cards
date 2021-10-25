@@ -6,20 +6,31 @@ import Logo from '../Logo/index';
 import './style.scss'
 
 const Header = () => {
-    const [mobileNav, setMobileNav] = useState(false);
+    const [hideNav, setHideNav] = useState(false);
     const [mobileNavToogle, setMobileNavToogle] = useState(false);
+    let lastScroll;
 
-    const handler = () => {
-        if (window.scrollY > 300 && !mobileNav)
-            setMobileNav(true)
-        else if (window.scrollY < 300 && mobileNav) 
-            setMobileNav(false)
+    function scrollHandler() {
+        const currentScroll = window.scrollY
+
+        if (currentScroll <= 0) {
+            setHideNav(false)
+            return;
+        }
+
+        if (currentScroll > lastScroll && !hideNav) {
+            setHideNav(true)
+        } else if (currentScroll < lastScroll && hideNav) {
+            setHideNav(false)
+        }
+
+        lastScroll = currentScroll
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', handler);
+        window.addEventListener('scroll', scrollHandler);
         return () => {
-            window.removeEventListener('scroll', handler);
+            window.removeEventListener('scroll', scrollHandler);
         }
     })
 
@@ -28,7 +39,7 @@ const Header = () => {
     }
 
     return ( 
-        <nav>
+        <nav className={hideNav && 'hide-nav'}>
             <div className="logo">
                 <Logo />
             </div>
@@ -40,31 +51,31 @@ const Header = () => {
             </div>
 
             <ul className={mobileNavToogle ? "nav-links open" : "nav-links"}>
-                <li className={mobileNavToogle ? 'fade show': undefined}>
+                <li className={mobileNavToogle && 'fade show'}>
                     <NavLink exact to="/">
                         Home
                     </NavLink>
                 </li>
                 
-                <li className={mobileNavToogle ? 'fade show': undefined}>
+                <li className={mobileNavToogle && 'fade show'}>
                     <NavLink to="/features">
                         Features
                     </NavLink>
                 </li>
 
-                <li className={mobileNavToogle ? 'fade show': undefined}>
+                <li className={mobileNavToogle && 'fade show'}>
                     <NavLink to="/how">
                         How It Works
                     </NavLink>
                 </li>
     
-                <li className={mobileNavToogle ? 'fade show': undefined}>
+                <li className={mobileNavToogle && 'fade show'}>
                     <NavLink to="/try">
                         Try Out!
                     </NavLink>
                 </li>
     
-                <li className={mobileNavToogle ? 'fade show': undefined}>
+                <li className={mobileNavToogle && 'fade show'}>
                     <NavLink to="/login">
                         Login
                     </NavLink>    
