@@ -6,8 +6,13 @@ nav {
     background-color: $dark-blue;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
-    position: relative;
+    position: fixed;
     z-index: 10;
+    transition: all .3s ease-in-out;
+
+    &.hide-nav {
+        transform: translate3d(0, -100%, 0);
+    }
 
     .logo {
         padding-left: 1.2vh;
@@ -51,8 +56,19 @@ nav {
 }
 
 .hamburger {
-    display: none;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
     
+    @media screen and (min-width: $md) {
+        display: none;
+    }
+
     div {
         width: 30px;
         height:3px;
@@ -76,22 +92,6 @@ nav {
 }
 
 @media screen and (max-width: $md){
-    nav {
-        position: relative;
-        z-index: 3;
-    }
-
-    .hamburger {
-        display:block;
-        position: absolute;
-        cursor: pointer;
-        right: 5%;
-        top: 50%;
-        transform: translate(-5%, -50%);
-        z-index: 2;
-        transition: all 0.7s ease;
-    }
-
     .nav-links {
         position: fixed;
         background: $dark-blue;
