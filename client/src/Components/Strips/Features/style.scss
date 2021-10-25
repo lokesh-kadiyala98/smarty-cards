@@ -1,23 +1,25 @@
+@import './../../../App.scss';
+
 .features-section {
     .features {
         margin: 0 auto;
         display: flex;
         justify-content: space-evenly;
 
-        @media screen and (min-width: 500px) {
+        @media screen and (min-width: $sm) {
             flex-direction: row;
             margin-top: -50px;
         }
     
         .feature {
-            background-color: #f47a62;
+            background-color: $orange;
 
             img.center {
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
 
-                @media screen and (max-width: 460px) {
+                @media screen and (max-width: $sm) {
                     width: 70%;
                 }
             }
@@ -27,17 +29,17 @@
                 font-family: 'Roboto';
                 font-weight: 300;
                 
-                @media screen and (min-width: 460px) {
+                @media screen and (min-width: $sm) {
                     font-size: 22px;
                 }
             }
 
-            @media screen and (min-width: 724px) {
+            @media screen and (min-width: $md) {
                 padding: 1.5rem;
             }
         }
     
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: $lg) {
             width: 80vw;
         }
     }

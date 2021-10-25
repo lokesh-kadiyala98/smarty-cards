@@ -1,9 +1,11 @@
+@import './../../App.scss';
+
 .loader {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #413ada;
+    background-color: $dark-blue;
 
     .logo {
 
@@ -14,7 +16,7 @@
         .triangle {
             border-left: 36px solid transparent;
             border-right: 36px solid transparent;
-            border-bottom: 60px solid #f7c851;
+            border-bottom: 60px solid $yellow;
             
             animation: jump .6s ease alternate infinite;
         }

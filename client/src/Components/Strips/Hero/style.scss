@@ -1,6 +1,8 @@
+@import './../../../App.scss';
+
 header {
     .hero {
-        background-color: #f7c851;
+        background-color: $yellow;
         font-family: 'Barlow', sans-serif;
         height: 100vh;
         text-align: center;
@@ -8,41 +10,41 @@ header {
         align-items: center;
         justify-content: space-evenly;
 
-        @media screen and (max-width: 728px) {
+        @media screen and (max-width: $md) {
             flex-direction: column;
         }
 
         .hero-text {
             width: 100%;
 
-            @media screen and (max-width: 728px){
+            @media screen and (max-width: $md){
                 margin-top: 10vh;
             }
 
             h1 {
                 font-weight: 700;
                 font-size: 70px;
-                color: #413ada;
+                color: $dark-blue;
                 letter-spacing: 2px;
     
-                @media screen and (max-width: 1024px) {
+                @media screen and (max-width: $lg) {
                     font-size: 54px;
                 }
 
-                @media screen and (max-width: 728px) {
+                @media screen and (max-width: $md) {
                     font-size: 46px;
                 }
             }
         
             h2 {
-                color: #f47a62;
+                color: $orange;
                 font-size: 32px;
     
-                @media screen and (max-width: 1024px) {
+                @media screen and (max-width: $lg) {
                     font-size: 24px;
                 }
 
-                @media screen and (max-width: 728px) {
+                @media screen and (max-width: $md) {
                     font-size: 22px;
                 }
             }
@@ -50,7 +52,17 @@ header {
 
         
         .image {
-            @media screen and (max-width: 1024px) {
+            img {
+                width: 50%;
+            }
+
+            @media screen and (min-width: $md) {
+                img {
+                    width: 70%;
+                }
+            }
+
+            @media screen and (min-width: $lg) {
                 img {
                     width: 90%;
                 }

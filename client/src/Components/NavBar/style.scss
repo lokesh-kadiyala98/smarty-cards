@@ -1,7 +1,9 @@
+@import './../../App.scss';
+
 nav {
     height: 6rem;
     width: 100%;
-    background-color: #413ada;
+    background-color: $dark-blue;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     position: relative;
@@ -23,10 +25,10 @@ nav {
         
         li {
             position: relative;
-            color: #f7c851;
+            color: $yellow;
 
             &:hover {
-                color: #f47a62;
+                color: $orange;
             }
 
             &::after {
@@ -34,7 +36,7 @@ nav {
                 display: block;
                 height: 3px;
                 width: 0%;
-                background-color: #f47a62;
+                background-color: $orange;
                 position: absolute;
                 transition: all ease-in-out 250ms;
                 margin: 0 0 0 10%;
@@ -54,7 +56,7 @@ nav {
     div {
         width: 30px;
         height:3px;
-        background: #f7c851;
+        background: $yellow;
         margin: 5px;
         transition: all 0.3s ease;
     }
@@ -73,7 +75,7 @@ nav {
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: $md){
     nav {
         position: relative;
         z-index: 3;
@@ -92,7 +94,7 @@ nav {
 
     .nav-links {
         position: fixed;
-        background: #413ada;
+        background: $dark-blue;
         height: 100vh;
         width: 100%;
         flex-direction: column;
